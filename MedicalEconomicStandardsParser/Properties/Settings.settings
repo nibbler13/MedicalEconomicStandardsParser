@@ -1,7 +1,81 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MedicalEconomicStandardsParser.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="MkbCodesFileName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">МКБ коды.xlsx</Value>
+    </Setting>
+    <Setting Name="MkbCodesDgcodeColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">A</Value>
+    </Setting>
+    <Setting Name="MkbCodesMkbcodeColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C</Value>
+    </Setting>
+    <Setting Name="MkbCodesFirstRowWithData" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="MkbCodesSheetName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">МКБ коды</Value>
+    </Setting>
+    <Setting Name="MESSheetName" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="MESFirstRowWithData" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="MESMkbBlockName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">МКБ10</Value>
+    </Setting>
+    <Setting Name="MESMkbCodeColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">A</Value>
+    </Setting>
+    <Setting Name="MESMkbNameColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">B</Value>
+    </Setting>
+    <Setting Name="MESDataMedicalServiceCodeColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">A</Value>
+    </Setting>
+    <Setting Name="МESDataMedicalServiceNameColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">B</Value>
+    </Setting>
+    <Setting Name="МESDataAverageFrequencyOfGrantingColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C</Value>
+    </Setting>
+    <Setting Name="МESDataAverageIndexOfFrequencyOfApplicationColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D</Value>
+    </Setting>
+    <Setting Name="MESDataServiceNameColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">E</Value>
+    </Setting>
+    <Setting Name="MESDataCodeColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">F</Value>
+    </Setting>
+    <Setting Name="MESDataFactColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">G</Value>
+    </Setting>
+    <Setting Name="MESDataPrepaidExpenseColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">H</Value>
+    </Setting>
+    <Setting Name="MESDataCountColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">I</Value>
+    </Setting>
+    <Setting Name="MESDataAgeFromColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">J</Value>
+    </Setting>
+    <Setting Name="MESDataAgeBeforeColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">K</Value>
+    </Setting>
+    <Setting Name="MESDataDiagnosticControlColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">L</Value>
+    </Setting>
+    <Setting Name="MESDataBlockName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Код медицинской услуги</Value>
+    </Setting>
+    <Setting Name="TemplateFileNameMis" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Template_Mis.xlsx</Value>
+    </Setting>
+    <Setting Name="TemplateFileNameSummary" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Template_Summary.xlsx</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>
