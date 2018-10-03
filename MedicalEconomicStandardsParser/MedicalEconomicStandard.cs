@@ -22,6 +22,25 @@ namespace MedicalEconomicStandardsParser {
 		}
 
 		public void AddMkbCode(string mkbCode, string mkbCodeName) {
+			mkbCode = mkbCode.
+				ToLower().
+				Replace("а", "a").
+				Replace("в", "b").
+				Replace("с", "c").
+				Replace("е", "e").
+				Replace("н", "h").
+				Replace("к", "k").
+				Replace("м", "m").
+				Replace("о", "o").
+				Replace("р", "p").
+				Replace("т", "t").
+				Replace("х", "x").
+				Replace("у", "y").
+				ToUpper().
+				Replace(" ", "").
+				Replace("*", "").
+				Replace("+", "");
+
 			if (MkbCodes.ContainsKey(mkbCode))
 				return;
 

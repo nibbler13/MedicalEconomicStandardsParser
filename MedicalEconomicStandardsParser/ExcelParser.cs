@@ -208,8 +208,10 @@ namespace MedicalEconomicStandardsParser {
 
 			for (int i = Properties.Settings.Default.MkbCodesFirstRowWithData - 1; i < dataTable.Rows.Count; i++) {
 				try {
-					string mkbCode = dataTable.Rows[i][GetExcelColumnNumber(Properties.Settings.Default.MkbCodesMkbcodeColumn) - 1].ToString();
-					string misCode = dataTable.Rows[i][GetExcelColumnNumber(Properties.Settings.Default.MkbCodesDgcodeColumn) - 1].ToString();
+					string mkbCode = dataTable.Rows[i][GetExcelColumnNumber(Properties.Settings.Default.MkbCodesMkbcodeColumn) - 1].
+						ToString().ToUpper().Replace(" ", "").Replace("*", "").Replace("+", "");
+					string misCode = dataTable.Rows[i][GetExcelColumnNumber(Properties.Settings.Default.MkbCodesDgcodeColumn) - 1].
+						ToString().ToUpper();
 
 					if (mkbCodes.ContainsKey(mkbCode))
 						mkbCodes[mkbCode].Add(misCode);
@@ -417,6 +419,8 @@ namespace MedicalEconomicStandardsParser {
 			ISheet sheet = workbook.GetSheet("Data");
 			ICreationHelper creationHelper = workbook.GetCreationHelper();
 
+			List<string> notFoundMkbCodes = new List<string>();
+
 			foreach (MedicalEconomicStandard standard in standards) {
 				foreach (StandardDataRow dataRow in standard.DataRows) {
 					backgroundWorker.ReportProgress((int)progressCurrent, "");
@@ -447,6 +451,15 @@ namespace MedicalEconomicStandardsParser {
 						}
 
 						foreach (KeyValuePair<string, string> mkbCode in standard.MkbCodes) {
+							if (!mkbCodes.ContainsKey(mkbCode.Key)) {
+								if (notFoundMkbCodes.Contains(mkbCode.Key))
+									continue;
+
+								backgroundWorker.ReportProgress((int)progressCurrent, "Не удается найти код для диагноза МКБ: '" + mkbCode.Key.ToLower() + "', файл: " + standard.FileName);
+								notFoundMkbCodes.Add(mkbCode.Key);
+								continue;
+							}
+
 							foreach (string code in mkbCodes[mkbCode.Key]) {
 								IRow row = sheet.CreateRow(rowNumber);
 
